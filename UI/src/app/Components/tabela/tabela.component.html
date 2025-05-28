@@ -1,0 +1,50 @@
+<div>
+    <header>
+        <h3>{{titulo}}</h3>
+    </header>
+    <section>
+        <table>
+            <tr>					
+                <th *ngFor="let topic of topicos">{{topic}}</th>
+            </tr>
+            <!-- tr com id -->
+            <ng-content *ngIf="livros">
+                <tr *ngFor="let livro of livros">				
+                    <td>{{livro.titulo}}</td>
+                    <td>{{livro.autor}}</td>
+                    <td>{{livro.editora}}</td>
+                    <td>{{livro.anoPublicacao}}</td>
+                    <td class="acoes">
+                        <ButtonsComponent icon="edit" (click)="editar()" />
+                        <ButtonsComponent icon="del" (click)="excluir()" />
+                    </td>
+                </tr>
+            </ng-content>
+
+            <ng-content *ngIf="usuarios">
+                <tr *ngFor="let user of usuarios">				
+                    <td>{{user.nome}}</td>
+                    <td>{{user.matricula}}</td>
+                    <td>{{user.curso}}</td>
+                    <td class="acoes">
+                        <ButtonsComponent icon="edit" (click)="editar()" />
+                        <ButtonsComponent icon="del" (click)="excluir()" />
+                    </td>
+                </tr>
+            </ng-content>
+
+            <ng-content *ngIf="emprestimos">
+                <tr *ngFor="let empres of emprestimos">				
+                    <td>{{empres.usuario.nome}}</td>
+                    <td>{{empres.livro.titulo}}</td>
+                    <td>{{empres.dataEmprestimo}}</td>
+                    <td>{{empres.dataDevolucaoPrevista}}</td>
+                    <td>{{empres.status}}</td>
+                    <td class="acoes">
+                        <ButtonsComponent icon="devolver" (click)="devolver(empres.id)" />
+                    </td>
+                </tr>
+            </ng-content>
+        </table>
+    </section>
+</div>

@@ -1,0 +1,9 @@
+<BaseLayout titulo="Gerenciamento de Livros" descricao="Gerencie o acervo da biblioteca acadêmica" icon="livro" variantColor="roxo" textButton="Adicionar Livro" (abrirModalEvent)="abrirModal = $event">
+    <TabelaComponent titulo="Lista de Livros" [topicos]="topicos" [livros]="livros" />
+    <ModalComponent *ngIf="abrirModal" (fecharModalEvent)="abrirModal = $event" variantColor="roxo">
+        <InputsLabelComponent text="Titulo" idInput="titulo" placeholder="" tipoInput="text" />
+        <InputsLabelComponent text="Autor" idInput="autor" placeholder="" tipoInput="text" />
+        <InputsLabelComponent text="Editora" idInput="editora" placeholder="" tipoInput="text" />
+        <InputsLabelComponent text="Ano" idInput="ano" placeholder="" tipoInput="number" />
+    </ModalComponent>
+</BaseLayout>

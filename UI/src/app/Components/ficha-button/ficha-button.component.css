@@ -1,0 +1,67 @@
+.ficha{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    
+    & header{
+        display: flex;
+        align-items: end;
+        gap: 15px;
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+    
+}
+
+.roxo{
+    border: 2px solid var(--roxo-principal);
+
+    & header{
+        color: var(--roxo-800);
+    }
+
+    p {
+        color: var(--roxo-700);
+    }
+}
+
+.ficha.roxo:hover{
+    background-color: var(--roxo-principal);
+}
+
+.azul{
+    border: 2px solid var(--indigo-principal);
+
+    & header{
+        color: var(--indigo-800);
+    }
+
+    p {
+        color: var(--indigo-700);
+    }
+}
+
+.ficha.azul:hover{
+    background-color: var(--indigo-principal);
+}
+
+.rose{
+    border: 2px solid var(--rose-principal);
+
+    & header{
+        color: var(--rose-800);
+    }
+
+    p {
+        color: var(--rose-700);
+    }
+}
+
+.ficha.rose:hover{
+    background-color: var(--rose-principal);
+}

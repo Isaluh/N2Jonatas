@@ -1,0 +1,17 @@
+<main>
+    <header>
+        <div>
+            <a [routerLink]="'/'">
+                <img src="setaVolta.svg" alt="" width="20">
+                <span>Voltar a Home</span>
+            </a>
+            <div [class]="variantColor">
+                <IconChange [icon]="icon" />
+                <h3>{{titulo}}</h3>
+            </div>
+            <p>{{descricao}}</p>
+        </div>
+        <ButtonsComponent [text]="textButton" [variantColor]="variantColor" (click)="abrirModal()" />
+    </header>
+    <ng-content></ng-content>
+</main>

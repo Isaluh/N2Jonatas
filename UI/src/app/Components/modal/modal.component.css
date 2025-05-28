@@ -1,0 +1,30 @@
+.pai{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.conteudo{
+    width: 50%;
+    height: fit-content;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & div{
+        display: flex;
+        align-self: end;
+        gap: 10px;
+    }
+}

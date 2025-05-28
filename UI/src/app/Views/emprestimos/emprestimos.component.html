@@ -1,0 +1,6 @@
+<BaseLayout titulo="Gerenciamento de Empréstimos" descricao="Controle empréstimos e devoluções da biblioteca" icon="controle" variantColor="rose" textButton="Novo Empréstimo" (abrirModalEvent)="abrirModal = $event">
+    <TabelaComponent titulo="Lista de Empréstimos" [topicos]="topicos" [emprestimos]="emprestimos" />
+    <ModalComponent *ngIf="abrirModal" (fecharModalEvent)="abrirModal = $event" variantColor="rose">
+        <!-- colocar list pra user e list pra livro -->
+    </ModalComponent>
+</BaseLayout>

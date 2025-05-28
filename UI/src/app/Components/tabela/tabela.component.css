@@ -1,0 +1,30 @@
+div{
+    display: flex;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    padding: 24px;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+table{
+    width: 100%;
+    & th{
+        color: var(--font-secundaria);
+        padding: 10px 0;
+    }
+
+    & td{
+        text-align: center;
+        border-top: 1px solid #e5e7eb;
+        padding: 10px 0;
+    }
+}
+
+.acoes{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}

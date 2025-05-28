@@ -1,0 +1,10 @@
+<div [class]="'ficha ' + variantColor ">
+    <header>
+        <IconChange [icon]="icon" />
+        <h3>{{titulo}}</h3>
+    </header>
+    <p>{{descricao}}</p>
+    <a [routerLink]="'/'+rota" style="margin-top: 20px;">
+        <ButtonsComponent [text]="textButton" [variantColor]="variantColor" style="width: 90%; align-self: center;" />
+    </a>
+</div>

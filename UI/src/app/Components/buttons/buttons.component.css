@@ -1,0 +1,33 @@
+button{
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+
+.roxo{
+    color: white;
+    background-color: var(--roxo-900);
+}
+
+.azul{
+    color: white;
+    background-color: var(--indigo-900);
+}
+
+.rose{
+    color: white;
+    background-color: var(--rose-900);
+}
+
+.buttonIcon{
+    padding: 10px; 
+}
+
+.buttonIcon:hover{
+    background-color: rgb(197, 197, 197);
+}

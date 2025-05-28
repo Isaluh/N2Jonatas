@@ -1,0 +1,20 @@
+<main>
+    <header>
+        <h1>📚 Sistema de Biblioteca Acadêmica</h1>
+        <p>Gerencie livros, usuários e empréstimos de forma simples e eficiente</p>
+    </header>
+
+    <div class="amostra">
+        <!-- colocar os numeros -->
+        <fichaCompletaComponent titulo="Total de Livros" icon="livro" [text]="numLivros.toString()" descricao="Acervo completo da biblioteca" variantColor="rosa" />
+        <fichaCompletaComponent titulo="Usuários Cadastrados" icon="user" [text]="numUser.toString()" descricao="Estudantes e professores" variantColor="azul" />
+        <fichaCompletaComponent titulo="Empréstimos Ativos" icon="controle" [text]="numEmprestimo.toString()" descricao="Livros atualmente emprestados" variantColor="verde" />
+        <fichaCompletaComponent titulo="Empréstimos Vencidos" icon="info" [text]="numVencido.toString()" descricao="Requerem atenção" variantColor="laranja" />
+    </div>
+
+    <nav>
+        <FichaButtonComponent titulo="Gerenciar Livros" icon="livro" textButton="Acessar Livros" descricao="Adicione, edite ou remova livros do acervo" variantColor="roxo" rota="livros" />
+        <FichaButtonComponent titulo="Gerenciar Usuários" icon="user" textButton="Acessar Usuários" descricao="Cadastre e gerencie usuários da biblioteca" variantColor="azul" rota="usuarios" />
+        <FichaButtonComponent titulo="Gerenciar Empréstimos" icon="agenda" textButton="Acessar Empréstimos" descricao="Controle empréstimos e devoluções" variantColor="rose" rota="emprestimos" />
+    </nav>
+</main>

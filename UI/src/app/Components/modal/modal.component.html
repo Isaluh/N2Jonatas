@@ -1,0 +1,9 @@
+<div class="pai">
+    <div class="conteudo">
+        <ng-content></ng-content>
+        <div>
+            <ButtonsComponent text="Cancelar" (click)="fecharModal()" />
+            <ButtonsComponent text="Adicionar" [variantColor]="variantColor" />
+        </div>
+    </div>
+</div>
