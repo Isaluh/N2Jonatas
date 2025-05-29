@@ -1,4 +1,4 @@
 <label [for]="idInput">
     <span>{{text}}</span>
-    <input [type]="tipoInput" [id]="idInput" [placeholder]="placeholder">
+    <input [type]="tipoInput" [id]="idInput" [placeholder]="placeholder" [value]="valor" (input)="handleInput($event)">
 </label>

@@ -50,6 +50,7 @@ a{
 
 h3{
     font-size: 36px;
+    color: var(--font-principal);
 }
 
 p {

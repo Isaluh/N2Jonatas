@@ -28,3 +28,15 @@ table{
     flex-direction: row;
     gap: 5px;
 }
+
+.DEVOLVIDO{
+    color: var(--verde-700);
+}
+
+.EMPRESTADO{
+    color: var(--amarelo-700);
+}
+
+.vermelho{
+    color: var(--vermelho-700);
+}

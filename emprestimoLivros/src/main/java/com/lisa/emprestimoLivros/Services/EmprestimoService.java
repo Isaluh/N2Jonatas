@@ -63,13 +63,6 @@ public class EmprestimoService {
         emprestimoRepository.deleteById(id);
     }
 
-    public Emprestimo updateEmprestimo(Emprestimo emprestimo) {
-        if (emprestimo == null || emprestimo.getId() == null) {
-            throw new IllegalArgumentException("Emprestimo não pode ser atualizado: Falta de informações.");
-        }
-        return emprestimoRepository.save(emprestimo);
-    }
-
     public Emprestimo updateStatusEmprestimo(StatusLivro status, Integer id) {
         emprestimoRepository.getReferenceById(id).setStatus(status);
         return emprestimoRepository.save(emprestimoRepository.getReferenceById(id));

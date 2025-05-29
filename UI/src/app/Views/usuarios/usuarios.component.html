@@ -1,8 +1,8 @@
 <BaseLayout titulo="Gerenciamento de Usuários" descricao="Gerencie estudantes e professores da biblioteca" icon="user" variantColor="azul" textButton="Adicionar Usuário" (abrirModalEvent)="abrirModal = $event">
     <TabelaComponent titulo="Lista de Usuários" [topicos]="topicos" [usuarios]="usuarios" />
-    <ModalComponent *ngIf="abrirModal" (fecharModalEvent)="abrirModal = $event" variantColor="azul">
-        <InputsLabelComponent text="Nome" idInput="nome" placeholder="" tipoInput="text" />
-        <InputsLabelComponent text="Matricula" idInput="matricula" placeholder="" tipoInput="number" />
-        <InputsLabelComponent text="Curso" idInput="curso" placeholder="" tipoInput="text" />
+    <ModalComponent *ngIf="abrirModal" (fecharModalEvent)="cancelar($event)" (salvarEvent)="criarUsuario()" variantColor="azul">
+        <InputsLabelComponent text="Nome" idInput="nome" placeholder="" tipoInput="text" [(ngModel)]="addUsuario.nome" />
+        <InputsLabelComponent text="Matricula" idInput="matricula" placeholder="" tipoInput="number" [(ngModel)]="addUsuario.matricula" />
+        <InputsLabelComponent text="Curso" idInput="curso" placeholder="" tipoInput="text" [(ngModel)]="addUsuario.curso" />
     </ModalComponent>
 </BaseLayout>

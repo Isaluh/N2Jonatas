@@ -1,15 +1,15 @@
 export interface Livro{
-    id : number,
+    id : number | null,
     titulo : String,
     autor : String,
     editora : String,
-    anoPublicacao : number
+    anoPublicacao : number | null
 }
 
 export interface Usuario{
-    id : number,
+    id : number | null,
     nome : String,
-    matricula : number,
+    matricula : number | null,
     curso : String
 }
 
@@ -17,7 +17,7 @@ export interface Emprestimo{
     id : number,
     livro : Livro,
     usuario : Usuario,
-    dataEmprestimo : String,
-    dataDevolucaoPrevista : String,
+    dataEmprestimo : string,
+    dataDevolucaoPrevista : string,
     status : String
 }

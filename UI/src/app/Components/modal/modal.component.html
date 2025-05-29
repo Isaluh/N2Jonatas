@@ -3,7 +3,7 @@
         <ng-content></ng-content>
         <div>
             <ButtonsComponent text="Cancelar" (click)="fecharModal()" />
-            <ButtonsComponent text="Adicionar" [variantColor]="variantColor" />
+            <ButtonsComponent text="Adicionar" [variantColor]="variantColor" (click)="salvar()" />
         </div>
     </div>
 </div>

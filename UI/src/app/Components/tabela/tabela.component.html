@@ -15,8 +15,8 @@
                     <td>{{livro.editora}}</td>
                     <td>{{livro.anoPublicacao}}</td>
                     <td class="acoes">
-                        <ButtonsComponent icon="edit" (click)="editar()" />
-                        <ButtonsComponent icon="del" (click)="excluir()" />
+                        <ButtonsComponent icon="edit" (click)="editar('livro', livro.id!)" />
+                        <ButtonsComponent icon="del" (click)="excluir('livro', livro.id!)" />
                     </td>
                 </tr>
             </ng-content>
@@ -27,8 +27,8 @@
                     <td>{{user.matricula}}</td>
                     <td>{{user.curso}}</td>
                     <td class="acoes">
-                        <ButtonsComponent icon="edit" (click)="editar()" />
-                        <ButtonsComponent icon="del" (click)="excluir()" />
+                        <ButtonsComponent icon="edit" (click)="editar('user', user.id!)" />
+                        <ButtonsComponent icon="del" (click)="excluir('user', user.id!)" />
                     </td>
                 </tr>
             </ng-content>
@@ -37,14 +37,28 @@
                 <tr *ngFor="let empres of emprestimos">				
                     <td>{{empres.usuario.nome}}</td>
                     <td>{{empres.livro.titulo}}</td>
-                    <td>{{empres.dataEmprestimo}}</td>
-                    <td>{{empres.dataDevolucaoPrevista}}</td>
-                    <td>{{empres.status}}</td>
+                    <td>{{ empres.dataEmprestimo | date: 'dd/MM/yyyy' }}</td>
+                    <td [ngClass]="{'vermelho': isVencido(empres)}">{{ empres.dataDevolucaoPrevista | date: 'dd/MM/yyyy' }}</td>
+                    <td [class]="empres.status">{{empres.status}}</td>
                     <td class="acoes">
-                        <ButtonsComponent icon="devolver" (click)="devolver(empres.id)" />
+                        <ButtonsComponent *ngIf="empres.status != 'DEVOLVIDO'" icon="devolver" (click)="devolver(empres.id)" />
+                        <ButtonsComponent *ngIf="empres.status == 'DEVOLVIDO'" icon="del" (click)="excluir('empres', empres.id!)" />
                     </td>
                 </tr>
             </ng-content>
         </table>
     </section>
+
+    <ModalComponent *ngIf="modalLivro" (fecharModalEvent)="cancelar($event)" variantColor="roxo" (salvarEvent)="updateLivro()">
+        <InputsLabelComponent text="Titulo" idInput="titulo" tipoInput="text" [(ngModel)]="upLivro.titulo" />
+        <InputsLabelComponent text="Autor" idInput="autor" tipoInput="text" [(ngModel)]="upLivro.autor" />
+        <InputsLabelComponent text="Editora" idInput="editora"  tipoInput="text" [(ngModel)]="upLivro.editora" />
+        <InputsLabelComponent text="Ano" idInput="ano" tipoInput="number" [(ngModel)]="upLivro.anoPublicacao" />
+    </ModalComponent>
+
+    <ModalComponent *ngIf="modalUser" (fecharModalEvent)="cancelar($event)" variantColor="azul" (salvarEvent)="updateUser()">
+        <InputsLabelComponent text="Nome" idInput="nome" placeholder="" tipoInput="text" [(ngModel)]="upUser.nome" />
+        <InputsLabelComponent text="Matricula" idInput="matricula" placeholder="" tipoInput="number" [(ngModel)]="upUser.matricula" />
+        <InputsLabelComponent text="Curso" idInput="curso" placeholder="" tipoInput="text" [(ngModel)]="upUser.curso" />
+    </ModalComponent>
 </div>

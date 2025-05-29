@@ -11,8 +11,13 @@ import { ButtonsComponent } from "../buttons/buttons.component";
 export class ModalComponent {
   @Input() variantColor = ''
   @Output() fecharModalEvent = new EventEmitter()
+  @Output() salvarEvent = new EventEmitter()
 
   fecharModal(){
     this.fecharModalEvent.emit(false)
+  }
+  
+  salvar(){
+    this.salvarEvent.emit()
   }
 }

@@ -30,7 +30,14 @@ export class HomeComponent {
     this.emprestimoService.getEmprestimos().subscribe((empres) => {this.numEmprestimo = empres.length; this.listDescart = empres; this.calcularVencidos()})
   }
 
-  calcularVencidos(){
-    // this.listDescart.filter((x) => x.dataDevolucaoPrevista)
+  calcularVencidos() {
+    const hoje = new Date();
+
+    this.numVencido = this.listDescart.filter(empres => {
+      if (!empres.dataDevolucaoPrevista) return false;
+      const dataPrevista = new Date(empres.dataDevolucaoPrevista);
+      return dataPrevista < hoje && empres.status !== 'DEVOLVIDO';
+    }).length;
   }
+
 }
