@@ -1,0 +1,20 @@
+<label class="pai">
+    <span class="tipo-vinculo__label">{{titulo}}</span>
+    <button type="button" (click)="listagem == titulo ? listagem = '' : listagem = titulo">
+        <span>{{ (valor && (valor.titulo || valor.nome)) ? (valor.titulo || valor.nome) : placeholder }}</span>
+    </button>
+
+    <div *ngIf="listagem == 'Livro'" class="listagem">
+        <label *ngFor="let livro of livros" [for]="livro.id">
+            <span>{{ livro.titulo }}</span>
+            <input type="radio" [name]="listagem" [id]="livro.id" [value]="livro.id" (input)="handleInput($event)" hidden>
+        </label>
+    </div>
+
+    <div *ngIf="listagem == 'Usuário'" class="listagem">
+        <label *ngFor="let user of usuarios" [for]="user.id">
+            <span>{{ user.nome }}</span>
+            <input type="radio" [name]="listagem" [id]="user.id" [value]="user.id" (input)="handleInput($event)" hidden>
+        </label>
+    </div>
+</label>

@@ -1,6 +1,7 @@
 <BaseLayout titulo="Gerenciamento de Empréstimos" descricao="Controle empréstimos e devoluções da biblioteca" icon="controle" variantColor="rose" textButton="Novo Empréstimo" (abrirModalEvent)="abrirModal = $event">
     <TabelaComponent titulo="Lista de Empréstimos" [topicos]="topicos" [emprestimos]="emprestimos" />
-    <ModalComponent *ngIf="abrirModal" (fecharModalEvent)="abrirModal = $event" variantColor="rose">
-        <!-- colocar list pra user e list pra livro -->
+    <ModalComponent *ngIf="abrirModal" (fecharModalEvent)="cancelar($event)" variantColor="rose" (salvarEvent)="criarEmprestimo()">
+        <InputSelectButtonComponent titulo="Livro" placeholder="Selecione um Livro" [livros]="livros" [(ngModel)]="addEmpres.livro" />
+        <InputSelectButtonComponent titulo="Usuário" placeholder="Selecione um Usuário" [usuarios]="usuarios" [(ngModel)]="addEmpres.usuario" />
     </ModalComponent>
 </BaseLayout>

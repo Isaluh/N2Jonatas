@@ -14,8 +14,8 @@ export class EmprestimoService {
     return this.httpClient.get<Emprestimo[]>(EmprestimoService.API_url)
   }
 
-  postEmprestimo(emprestimo : Emprestimo){
-    return this.httpClient.post<Emprestimo>(EmprestimoService.API_url+'/add', emprestimo)
+  postEmprestimo(emprestimo : object){
+    return this.httpClient.post(EmprestimoService.API_url+'/add', emprestimo)
   }
 
   putEmprestimo(id : number, status : String){

@@ -14,7 +14,7 @@ export interface Usuario{
 }
 
 export interface Emprestimo{
-    id : number,
+    id : number | null,
     livro : Livro,
     usuario : Usuario,
     dataEmprestimo : string,

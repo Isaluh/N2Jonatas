@@ -41,7 +41,7 @@
                     <td [ngClass]="{'vermelho': isVencido(empres)}">{{ empres.dataDevolucaoPrevista | date: 'dd/MM/yyyy' }}</td>
                     <td [class]="empres.status">{{empres.status}}</td>
                     <td class="acoes">
-                        <ButtonsComponent *ngIf="empres.status != 'DEVOLVIDO'" icon="devolver" (click)="devolver(empres.id)" />
+                        <ButtonsComponent *ngIf="empres.status != 'DEVOLVIDO'" icon="devolver" (click)="devolver(empres.id!)" />
                         <ButtonsComponent *ngIf="empres.status == 'DEVOLVIDO'" icon="del" (click)="excluir('empres', empres.id!)" />
                     </td>
                 </tr>
